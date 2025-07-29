@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>راهنماهای معما - حالت کتابی</title>
+  <style>
+    body {
+      font-family: 'Vazir', sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+    }
+
+    .slide {
+      display: none;
+      max-width: 700px;
+      margin: 60px auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #444;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    .answer {
+      display: none;
+      font-weight: bold;
+      margin-top: 15px;
+      font-size: 18px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 16px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .show-btn {
+      background: #3498db;
+      color: white;
+    }
+
+    .show-btn:hover {
+      background: #2980b9;
+    }
+
+    .nav-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .nav-btn {
+      background: #888;
+      color: white;
+    }
+
+    .nav-btn:hover {
+      background: #555;
+    }
+
+    .page-number {
+      text-align: center;
+      margin-top: 15px;
+      color: #555;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide active">
+    <h2>راهنمای ۱: جدول سودوکوی حروف</h2>
+    <p>در ستون‌ها، سطرها و مستطیل‌ها حروف تکراری قرار نگیرد. بعد از اتمام جدول، حروف را از چپ به راست بخوانید.</p>
+    <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+    <div class="answer">کاترین</div>
+  </div>
+
+  <div class="slide">
+    <h2>راهنمای ۲: نامه اول</h2>
+    <p>کسی که الکساندرا بهش بی‌توجهی می‌کنه کیه؟ از بازجویی‌ها کمک بگیر.</p>
+    <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+    <div class="answer">استفان</div>
+  </div>
+
+  <div class="slide">
+    <h2>راهنمای ۳: نامه دوم</h2>
+    <p>کسانی که اسمشان با S شروع می‌شود را شناسایی کن. حدس بزن نامه را کدامشان نوشته.</p>
+    <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+    <div class="answer">استیو</div>
+  </div>
+
+  <div class="slide">
+    <h2>راهنمای ۴: برگه سوخته</h2>
+    <p>دقیق‌تر نگاه کن، رنگ حروف با هم فرق نداره؟ از آن‌ها استفاده کن.</p>
+    <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+    <div class="answer">اسرار فاش می‌شوند</div>
+  </div>
+
+  <div class="slide">
+    <h2>راهنمای ۵: چک پول</h2>
+    <p>به ضرب‌المثل دقت کن. به چی اشاره می‌کنه؟ یادت نره فارسی ۳۲ حرف داره.</p>
+    <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+    <div class="answer">رشوه یا کمک</div>
+  </div>
+
+  <div class="slide">
+    <h2>راهنمای ۶: برگه رمزگذاری شده</h2>
+    <p>با استفاده از برگه راهنما جملات را رمزگشایی کن. متن رمزگشایی‌شده چه حقیقتی را آشکار می‌کند؟</p>
+    <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+    <div class="answer">[جواب را وارد کن]</div>
+  </div>
+
+  <div class="nav-btns" style="max-width: 700px; margin: 0 auto 40px; padding: 0 30px;">
+    <button class="nav-btn" onclick="prevSlide()">قبلی</button>
+    <button class="nav-btn" onclick="nextSlide()">بعدی</button>
+  </div>
+
+  <div class="page-number" id="pageNumber">صفحه ۱ از ۶</div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const pageNumber = document.getElementById('pageNumber');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      pageNumber.textContent = `صفحه ${index + 1} از ${slides.length}`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    function toggleAnswer(button) {
+      const answer = button.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
