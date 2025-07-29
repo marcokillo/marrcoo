@@ -1,213 +1,144 @@
-خواهری, [7/29/2025 5:15 PM]
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <title>معجون فاش‌کننده حقیقت</title>
-  <style>
-    body {
-      background-image: url('https://i.ibb.co/p04zJdh/dark-mist.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      color: #e0e0e0;
-      font-family: 'Tahoma', sans-serif;
-      direction: rtl;
-      padding: 30px;
-    }
-
-    .container {
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 15px;
-      padding: 25px;
-      max-width: 800px;
-      margin: auto;
-      box-shadow: 0 0 15px #000;
-    }
-
-    .step {
-      border: 1px solid #444;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 25px;
-      background-color: #1c1c1c;
-    }
-
-    input[type="text"] {
-      padding: 8px;
-      font-size: 16px;
-      width: 80%;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      background-color: #111;
-      border: 1px solid #555;
-      color: #fff;
-    }
-
-    button {
-      padding: 8px 16px;
-      font-size: 14px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .result {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    .final-choice {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .final-choice button {
-      margin: 10px;
-      padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 8px;
-      background-color: #550000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .final-result {
-      color: #ffd700;
-      font-size: 20px;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .majoon-image {
-      display: block;
-      margin: 20px auto;
-      max-width: 180px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #ffcc00;
-    }
-
-    .hint {
-      color: #aaa;
-      font-size: 14px;
-      margin-top: 5px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>معمای گاوصندوق در کتابخانه مرموز</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: #eee;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+    user-select: none;
+    overflow: hidden;
+  }
+  #safe-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: url('https://i.imgur.com/MC1xfwl.png') no-repeat center center;
+    background-size: contain;
+    box-shadow: 0 0 25px #0af;
+    border-radius: 12px;
+    backdrop-filter: brightness(0.8);
+  }
+  #lock-screen {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+  }
+  input[type="password"] {
+    font-size: 22px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 65%;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  button {
+    font-size: 18px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    background: #0a84ff;
+    color: white;
+    cursor: pointer;
+    width: 45%;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #0073e6;
+  }
+  #error-msg {
+    color: #f66;
+    margin-top: 10px;
+    height: 20px;
+  }
+  #paper {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 200px;
+    background: #f9f5dc;
+    box-shadow: 0 0 15px #bb9e00;
+    border: 3px solid #ccbb44;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #444;
+    text-align: center;
+    line-height: 2;
+    user-select: none;
+  }
+  #paper:hover {
+    box-shadow: 0 0 25px #ffcc00;
+  }
+  #secret-message {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-align: center;
+    display: none;
+    text-shadow: 0 0 10px #ffcc00;
+  }
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>🧪 معجون فاش‌کننده حقیقت</h1>
-    <img src="https://i.ibb.co/dgscX79/potion-bottle.png" class="majoon-image" alt="معجون جادویی" />
-    <p>سه ماده برای ساخت معجون باید پیدا شوند. هر مرحله، یک چالش دارد...</p>
-
-    <!-- مرحله اول -->
-    <div class="step" id="step1">
-      <h3>مرحله اول: خون صداقت</h3>
-      <p>«من اگر باشم، عدالت ممکن است. اما اگر خریده شوم، حقیقت خواهد مرد.»<br>من چه هستم؟</p>
-      <input type="text" id="answer1" placeholder="پاسخ را بنویس..." />
-      <div class="hint">راهنمایی: چیزی که در دادگاه اهمیت زیادی دارد</div>
-      <button onclick="checkAnswer(1, 'وجدان')">بررسی پاسخ</button>
-      <div class="result" id="result1"></div>
-    </div>
-
-    <!-- مرحله دوم -->
-    <div class="step" id="step2" style="display: none;">
-      <h3>مرحله دوم: اشک تصمیم‌های دوگانه</h3>
-      <p>دو در جلوی توست. یکی نجات است، یکی سقوط.<br>
-      یکی همیشه دروغ می‌گوید، دیگری همیشه راست. فقط یک سوال می‌توانی بپرسی.<br>
-      چه سوالی می‌پرسی تا راه نجات را پیدا کنی؟</p>
-      <input type="text" id="answer2" placeholder="پاسخ را بنویس..." />
-      <div class="hint">راهنمایی: از یکی از دربان‌ها بپرسید که دیگری چه پاسخی می‌دهد</div>
-      <button onclick="checkAnswer(2, 'اگر از او بپرسم کدام در نجات است، چه می‌گوید؟')">بررسی پاسخ</button>
-      <div class="result" id="result2"></div>
-    </div>
-
-    <!-- مرحله سوم -->
-    <div class="step" id="step3" style="display: none;">
-      <h3>مرحله سوم: گرد پنهان‌کاری</h3>
-      <p>روی میز چند گرد رنگی هست. نوشته:<br>
-      «هرجا سکوت را با طلا سنجیده‌اند، من در سایه‌ها بوده‌ام.<br>
-      من آنم که چهره حقیقت را پنهان می‌کنم.»<br>
-      کدام گرد را انتخاب می‌کنی؟</p>
-      <input type="text" id="answer3" placeholder="نام گرد..." />
-      <div class="hint">راهنمایی: رنگی بین سیاه و سفید</div>
-      <button onclick="checkAnswer(3, 'خاکستری')">بررسی پاسخ</button>
-      <div class="result" id="result3"></div>
-    </div>
-
-    <!-- انتخاب نهایی -->
-    <div class="step" id="finalChoice" style="display: none;">
-      <h3>🔍 معجون آماده است</h3>
-      <p>حقیقت آماده‌ی فاش شدن است... اما به چه قیمتی؟</p>
-      <div class="final-choice">
-
-خواهری, [7/29/2025 5:15 PM]
-<button onclick="revealEnding('رشوه')">
-          <img src="https://i.ibb.co/KrGTQ5y/bribe.png" alt="رشوه" style="height: 40px;"><br>رشوه
-        </button>
-        <button onclick="revealEnding('کمک')">
-          <img src="https://i.ibb.co/1M6xVLk/helping-hand.png" alt="کمک" style="height: 40px;"><br>کمک
-        </button>
-      </div>
-      <div class="final-result" id="finalResult"></div>
-    </div>
+<div id="safe-container">
+  <div id="lock-screen">
+    <input type="password" id="code-input" placeholder="رمز گاوصندوق را وارد کنید" autocomplete="off" />
+    <button onclick="unlockSafe()">باز کن</button>
+    <div id="error-msg"></div>
   </div>
 
-  <script>
-    function checkAnswer(step, correctAnswer) {
-      const userInput = document.getElementById(`answer${step}`).value.trim();
-      const resultDiv = document.getElementById(`result${step}`);
-      
-      if (userInput === correctAnswer || userInput.includes(correctAnswer)) {
-        resultDiv.textContent = "✅ درست گفتی! ماده پیدا شد.";
-        resultDiv.style.color = "#00ff88";
-        
-        if (step < 3) {
-          document.getElementById(`step${step + 1}`).style.display = "block";
-          // اسکرول به مرحله بعدی
-          document.getElementById(`step${step + 1}`).scrollIntoView({ behavior: 'smooth' });
-        } else {
-          document.getElementById('finalChoice').style.display = "block";
-          document.getElementById('finalChoice').scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        resultDiv.textContent = "❌ پاسخ اشتباه است. دوباره فکر کن...";
-        resultDiv.style.color = "#ff5555";
-      }
-    }
+  <div id="paper" onclick="showSecret()">
+    اسرار فاش می‌شوند
+  </div>
+</div>
 
-    function revealEnding(choice) {
-      const finalResult = document.getElementById('finalResult');
-      
-      if (choice === 'رشوه') {
-        finalResult.innerHTML = `
-          <div style="border: 1px solid #ff5555; padding: 15px; border-radius: 10px;">
-            <h4>💸 نتیجه انتخاب شما: راه رشوه</h4>
-            <p>حقیقت با پول خریداری شد، اما آیا این حقیقت واقعی است؟</p>
-            <p>معجون کار می‌کند، اما فقط بخشی از حقیقت را نشان می‌دهد...</p>
-            <p style="color: #aaa;">شما راه آسان را انتخاب کردید، اما حقیقت کامل نیست</p>
-          </div>
-        `;
-      } else if (choice === 'کمک') {
-        finalResult.innerHTML = `
-          <div style="border: 1px solid #00ff88; padding: 15px; border-radius: 10px;">
-            <h4>🤝 نتیجه انتخاب شما: راه کمک</h4>
-            <p>با کمک به دیگران، حقیقت کامل آشکار شد!</p>
-            <p>معجون قدرت واقعی خود را نشان داد و تمام حقایق پنهان را فاش کرد!</p>
-            <p style="color: #aaa;">شما راه درست را انتخاب کردید و به حقیقت کامل رسیدید</p>
-          </div>
-        `;
-      }
-      
-      finalResult.scrollIntoView({ behavior: 'smooth' });
+<div id="secret-message">✨ رمز فاش شد! اسرار دیگر پنهان نیستند! ✨</div>
+
+<script>
+  const correctCode = "4521"; // رمز گاوصندوق
+
+  function unlockSafe() {
+    const input = document.getElementById('code-input').value.trim();
+    const errorMsg = document.getElementById('error-msg');
+    if(input === correctCode) {
+      errorMsg.textContent = "";
+      document.getElementById('lock-screen').style.display = "none";
+      document.getElementById('paper').style.display = "block";
+    } else {
+      errorMsg.textContent = "رمز اشتباه است. دوباره تلاش کنید.";
     }
-  </script>
+  }
+
+  function showSecret() {
+    document.getElementById('secret-message').style.display = "block";
+    document.getElementById('paper').style.cursor = "default";
+    document.getElementById('paper').onclick = null;
+  }
+</script>
+
 </body>
 </html>
