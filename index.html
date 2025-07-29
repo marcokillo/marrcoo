@@ -1,225 +1,213 @@
+خواهری, [7/29/2025 5:15 PM]
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <title>راهنماهای معما - حالت کتابی</title>
-  <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>معجون فاش‌کننده حقیقت</title>
   <style>
     body {
-      font-family: 'Vazir', sans-serif;
-      direction: rtl;
-      margin: 0;
-      padding: 0;
-      background: url('https://wallpapers.com/images/hd/vintage-classic-paper-kteoa9d8z3s6vcld.jpg') no-repeat center center fixed;
+      background-image: url('https://i.ibb.co/p04zJdh/dark-mist.jpg');
       background-size: cover;
-    }
-
-    .wrapper {
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 80px;
-      padding-bottom: 60px;
-      box-sizing: border-box;
-    }
-
-    .slide {
-      display: none;
-      background: rgba(245, 236, 220, 0.95); /* زمینه خاکی نیمه شفاف */
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      background-attachment: fixed;
+      color: #e0e0e0;
+      font-family: 'Tahoma', sans-serif;
+      direction: rtl;
       padding: 30px;
-      width: 90%;
-      max-width: 700px;
-      box-sizing: border-box;
-      transform: rotateY(90deg);
-      opacity: 0;
-      transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
-    .slide.active {
-      display: block;
-      transform: rotateY(0deg);
-      opacity: 1;
+    .container {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      padding: 25px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 15px #000;
     }
 
-    h2 {
-      font-size: 20px;
-      margin-bottom: 8px;
-      color: #4b3621;
+    .step {
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      background-color: #1c1c1c;
     }
 
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #222;
-    }
-
-    .answer {
-      display: none;
-      font-weight: bold;
-      margin-top: 15px;
-      font-size: 18px;
-      color: #000;
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    input[type="text"] {
+      padding: 8px;
+      font-size: 16px;
+      width: 80%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: #111;
+      border: 1px solid #555;
+      color: #fff;
     }
 
     button {
-      margin-top: 20px;
-      padding: 10px 16px;
+      padding: 8px 16px;
+      font-size: 14px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .final-choice {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .final-choice button {
+      margin: 10px;
+      padding: 12px 20px;
       font-size: 16px;
       border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .show-btn {
-      background: #3498db;
-      color: white;
-    }
-
-    .show-btn:hover {
-      background: #2980b9;
-    }
-
-    .nav-btns {
+      background-color: #550000;
       display: flex;
-      justify-content: space-between;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      padding: 0 30px;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .nav-btn {
-      background: #888;
-      color: white;
-    }
-
-    .nav-btn:hover {
-      background: #555;
-    }
-
-    .page-number {
+    .final-result {
+      color: #ffd700;
+      font-size: 20px;
+      margin-top: 20px;
       text-align: center;
-      margin-top: 15px;
-      color: #333;
-      font-size: 16px;
     }
 
-    @media (max-width: 600px) {
-      .slide {
-        padding: 20px;
-      }
+    .majoon-image {
+      display: block;
+      margin: 20px auto;
+      max-width: 180px;
+    }
 
-      h2 {
-        font-size: 18px;
-      }
+    h1 {
+      text-align: center;
+      color: #ffcc00;
+    }
 
-      p, .answer {
-        font-size: 16px;
-      }
-
-      button {
-        font-size: 14px;
-      }
+    .hint {
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 5px;
     }
   </style>
 </head>
 <body>
 
-  <div class="wrapper">
-    <div class="slide active">
-      <h2>راهنمای ۱: جدول سودوکوی حروف</h2>
-      <p>در ستون‌ها، سطرها و مستطیل‌ها حروف تکراری قرار نگیرد. بعد از اتمام جدول، حروف را از چپ به راست بخوانید.</p>
-      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
-      <div class="answer">کاترین</div>
+  <div class="container">
+    <h1>🧪 معجون فاش‌کننده حقیقت</h1>
+    <img src="https://i.ibb.co/dgscX79/potion-bottle.png" class="majoon-image" alt="معجون جادویی" />
+    <p>سه ماده برای ساخت معجون باید پیدا شوند. هر مرحله، یک چالش دارد...</p>
+
+    <!-- مرحله اول -->
+    <div class="step" id="step1">
+      <h3>مرحله اول: خون صداقت</h3>
+      <p>«من اگر باشم، عدالت ممکن است. اما اگر خریده شوم، حقیقت خواهد مرد.»<br>من چه هستم؟</p>
+      <input type="text" id="answer1" placeholder="پاسخ را بنویس..." />
+      <div class="hint">راهنمایی: چیزی که در دادگاه اهمیت زیادی دارد</div>
+      <button onclick="checkAnswer(1, 'وجدان')">بررسی پاسخ</button>
+      <div class="result" id="result1"></div>
     </div>
 
-    <div class="slide">
-      <h2>راهنمای ۲: نامه اول</h2>
-      <p>کسی که الکساندرا بهش بی‌توجهی می‌کنه کیه؟ از بازجویی‌ها کمک بگیر.</p>
-      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
-      <div class="answer">استفان</div>
+    <!-- مرحله دوم -->
+    <div class="step" id="step2" style="display: none;">
+      <h3>مرحله دوم: اشک تصمیم‌های دوگانه</h3>
+      <p>دو در جلوی توست. یکی نجات است، یکی سقوط.<br>
+      یکی همیشه دروغ می‌گوید، دیگری همیشه راست. فقط یک سوال می‌توانی بپرسی.<br>
+      چه سوالی می‌پرسی تا راه نجات را پیدا کنی؟</p>
+      <input type="text" id="answer2" placeholder="پاسخ را بنویس..." />
+      <div class="hint">راهنمایی: از یکی از دربان‌ها بپرسید که دیگری چه پاسخی می‌دهد</div>
+      <button onclick="checkAnswer(2, 'اگر از او بپرسم کدام در نجات است، چه می‌گوید؟')">بررسی پاسخ</button>
+      <div class="result" id="result2"></div>
     </div>
 
-    <div class="slide">
-      <h2>راهنمای ۳: نامه دوم</h2>
-      <p>کسانی که اسمشان با S شروع می‌شود را شناسایی کن. حدس بزن نامه را کدامشان نوشته.</p>
-      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
-      <div class="answer">استیو</div>
+    <!-- مرحله سوم -->
+    <div class="step" id="step3" style="display: none;">
+      <h3>مرحله سوم: گرد پنهان‌کاری</h3>
+      <p>روی میز چند گرد رنگی هست. نوشته:<br>
+      «هرجا سکوت را با طلا سنجیده‌اند، من در سایه‌ها بوده‌ام.<br>
+      من آنم که چهره حقیقت را پنهان می‌کنم.»<br>
+      کدام گرد را انتخاب می‌کنی؟</p>
+      <input type="text" id="answer3" placeholder="نام گرد..." />
+      <div class="hint">راهنمایی: رنگی بین سیاه و سفید</div>
+      <button onclick="checkAnswer(3, 'خاکستری')">بررسی پاسخ</button>
+      <div class="result" id="result3"></div>
     </div>
 
-    <div class="slide">
-      <h2>راهنمای ۴: برگه سوخته</h2>
-      <p>دقیق‌تر نگاه کن، رنگ حروف با هم فرق نداره؟ از آن‌ها استفاده کن.</p>
-      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
-      <div class="answer">اسرار فاش می‌شوند</div>
-    </div>
+    <!-- انتخاب نهایی -->
+    <div class="step" id="finalChoice" style="display: none;">
+      <h3>🔍 معجون آماده است</h3>
+      <p>حقیقت آماده‌ی فاش شدن است... اما به چه قیمتی؟</p>
+      <div class="final-choice">
 
-    <div class="slide">
-      <h2>راهنمای ۵: چک پول</h2>
-      <p>به ضرب‌المثل دقت کن. به چی اشاره می‌کنه؟ یادت نره فارسی ۳۲ حرف داره.</p>
-      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
-      <div class="answer">رشوه یا کمک</div>
-    </div>
-
-    <div class="slide">
-      <h2>راهنمای ۶: برگه رمزگذاری شده</h2>
-      <p>با استفاده از برگه راهنما جملات را رمزگشایی کن. متن رمزگشایی‌شده چه حقیقتی را آشکار می‌کند؟</p>
-      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
-      <div class="answer">[جواب را وارد کن]</div>
+خواهری, [7/29/2025 5:15 PM]
+<button onclick="revealEnding('رشوه')">
+          <img src="https://i.ibb.co/KrGTQ5y/bribe.png" alt="رشوه" style="height: 40px;"><br>رشوه
+        </button>
+        <button onclick="revealEnding('کمک')">
+          <img src="https://i.ibb.co/1M6xVLk/helping-hand.png" alt="کمک" style="height: 40px;"><br>کمک
+        </button>
+      </div>
+      <div class="final-result" id="finalResult"></div>
     </div>
   </div>
-
-  <div class="nav-btns">
-    <button class="nav-btn" onclick="prevSlide()">قبلی</button>
-    <button class="nav-btn" onclick="nextSlide()">بعدی</button>
-  </div>
-
-  <div class="page-number" id="pageNumber">صفحه ۱ از ۶</div>
 
   <script>
-    const slides = document.querySelectorAll('.slide');
-    const pageNumber = document.getElementById('pageNumber');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-      });
-
-      setTimeout(() => {
-        slides[index].classList.add('active');
-        pageNumber.textContent = `صفحه ${index + 1} از ${slides.length}`;
-      }, 10);
-    }
-
-    function nextSlide() {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        showSlide(currentSlide);
+    function checkAnswer(step, correctAnswer) {
+      const userInput = document.getElementById(`answer${step}`).value.trim();
+      const resultDiv = document.getElementById(`result${step}`);
+      
+      if (userInput === correctAnswer || userInput.includes(correctAnswer)) {
+        resultDiv.textContent = "✅ درست گفتی! ماده پیدا شد.";
+        resultDiv.style.color = "#00ff88";
+        
+        if (step < 3) {
+          document.getElementById(`step${step + 1}`).style.display = "block";
+          // اسکرول به مرحله بعدی
+          document.getElementById(`step${step + 1}`).scrollIntoView({ behavior: 'smooth' });
+        } else {
+          document.getElementById('finalChoice').style.display = "block";
+          document.getElementById('finalChoice').scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        resultDiv.textContent = "❌ پاسخ اشتباه است. دوباره فکر کن...";
+        resultDiv.style.color = "#ff5555";
       }
     }
 
-    function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        showSlide(currentSlide);
+    function revealEnding(choice) {
+      const finalResult = document.getElementById('finalResult');
+      
+      if (choice === 'رشوه') {
+        finalResult.innerHTML = `
+          <div style="border: 1px solid #ff5555; padding: 15px; border-radius: 10px;">
+            <h4>💸 نتیجه انتخاب شما: راه رشوه</h4>
+            <p>حقیقت با پول خریداری شد، اما آیا این حقیقت واقعی است؟</p>
+            <p>معجون کار می‌کند، اما فقط بخشی از حقیقت را نشان می‌دهد...</p>
+            <p style="color: #aaa;">شما راه آسان را انتخاب کردید، اما حقیقت کامل نیست</p>
+          </div>
+        `;
+      } else if (choice === 'کمک') {
+        finalResult.innerHTML = `
+          <div style="border: 1px solid #00ff88; padding: 15px; border-radius: 10px;">
+            <h4>🤝 نتیجه انتخاب شما: راه کمک</h4>
+            <p>با کمک به دیگران، حقیقت کامل آشکار شد!</p>
+            <p>معجون قدرت واقعی خود را نشان داد و تمام حقایق پنهان را فاش کرد!</p>
+            <p style="color: #aaa;">شما راه درست را انتخاب کردید و به حقیقت کامل رسیدید</p>
+          </div>
+        `;
       }
-    }
-
-    function toggleAnswer(button) {
-      const answer = button.nextElementSibling;
-      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      
+      finalResult.scrollIntoView({ behavior: 'smooth' });
     }
   </script>
-
 </body>
 </html>
