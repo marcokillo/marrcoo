@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>راهنماهای معما - حالت کتابی</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Vazir', sans-serif;
       direction: rtl;
       margin: 0;
       padding: 0;
-      background: #f7f7f7;
+      background: url('https://wallpapers.com/images/hd/vintage-classic-paper-kteoa9d8z3s6vcld.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
     }
 
     .slide {
       display: none;
-      max-width: 700px;
+      max-width: 90%;
+      width: 700px;
       margin: 60px auto;
-      background: white;
+      background: rgba(255, 255, 255, 0.85); /* پس‌زمینه نیمه‌شفاف برای خوانایی */
       border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
       padding: 30px;
+      box-sizing: border-box;
     }
 
     .active {
@@ -29,7 +34,7 @@
     h2 {
       font-size: 20px;
       margin-bottom: 12px;
-      color: #444;
+      color: #333;
     }
 
     p {
@@ -67,7 +72,9 @@
     .nav-btns {
       display: flex;
       justify-content: space-between;
-      margin-top: 30px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      padding: 0 30px;
     }
 
     .nav-btn {
@@ -82,8 +89,29 @@
     .page-number {
       text-align: center;
       margin-top: 15px;
-      color: #555;
+      color: #444;
       font-size: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .slide {
+        padding: 20px;
+        margin: 40px 10px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      p, .answer {
+        font-size: 16px;
+      }
+
+      .nav-btns {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -125,50 +153,4 @@
   </div>
 
   <div class="slide">
-    <h2>راهنمای ۶: برگه رمزگذاری شده</h2>
-    <p>با استفاده از برگه راهنما جملات را رمزگشایی کن. متن رمزگشایی‌شده چه حقیقتی را آشکار می‌کند؟</p>
-    <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
-    <div class="answer">[جواب را وارد کن]</div>
-  </div>
-
-  <div class="nav-btns" style="max-width: 700px; margin: 0 auto 40px; padding: 0 30px;">
-    <button class="nav-btn" onclick="prevSlide()">قبلی</button>
-    <button class="nav-btn" onclick="nextSlide()">بعدی</button>
-  </div>
-
-  <div class="page-number" id="pageNumber">صفحه ۱ از ۶</div>
-
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    const pageNumber = document.getElementById('pageNumber');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-      pageNumber.textContent = `صفحه ${index + 1} از ${slides.length}`;
-    }
-
-    function nextSlide() {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        showSlide(currentSlide);
-      }
-    }
-
-    function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        showSlide(currentSlide);
-      }
-    }
-
-    function toggleAnswer(button) {
-      const answer = button.nextElementSibling;
-      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
-
-</body>
-</html>
+    <h2>راهنمای ۶:
