@@ -2,8 +2,8 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>راهنماهای معما</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>راهنماهای معما - حالت کتابی</title>
+  <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Vazir', sans-serif;
@@ -12,29 +12,42 @@
       padding: 0;
       background: url('https://wallpapers.com/images/hd/vintage-classic-paper-kteoa9d8z3s6vcld.jpg') no-repeat center center fixed;
       background-size: cover;
+    }
+
+    .wrapper {
       min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 80px;
+      padding-bottom: 60px;
+      box-sizing: border-box;
     }
 
     .slide {
       display: none;
-      max-width: 90%;
-      width: 700px;
-      margin: 100px auto 60px auto; /* ← این خط ۵ سانت پایین میاره */
-      background: rgba(245, 236, 220, 0.95); /* ← رنگ خاکی */
+      background: rgba(245, 236, 220, 0.95); /* زمینه خاکی نیمه شفاف */
       border-radius: 16px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
       padding: 30px;
+      width: 90%;
+      max-width: 700px;
       box-sizing: border-box;
+      transform: rotateY(90deg);
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
-    .active {
+    .slide.active {
       display: block;
+      transform: rotateY(0deg);
+      opacity: 1;
     }
 
     h2 {
       font-size: 20px;
-      margin-bottom: 12px;
-      color: #333;
+      margin-bottom: 8px;
+      color: #4b3621;
     }
 
     p {
@@ -49,6 +62,12 @@
       margin-top: 15px;
       font-size: 18px;
       color: #000;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     button {
@@ -90,14 +109,13 @@
     .page-number {
       text-align: center;
       margin-top: 15px;
-      color: #444;
+      color: #333;
       font-size: 16px;
     }
 
     @media (max-width: 600px) {
       .slide {
         padding: 20px;
-        margin: 60px 10px;
       }
 
       h2 {
@@ -108,56 +126,56 @@
         font-size: 16px;
       }
 
-      .nav-btns {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
+      button {
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="slide active">
-    <h2>راهنمای ۱: جدول سودوکوی حروف</h2>
-    <p>در ستون‌ها، سطرها و مستطیل‌ها حروف تکراری قرار نگیرد. بعد از اتمام جدول، حروف را از چپ به راست بخوانید.</p>
-    <button class="show-btn">نمایش جواب نهایی</button>
-    <div class="answer">کاترین</div>
-  </div>
+  <div class="wrapper">
+    <div class="slide active">
+      <h2>راهنمای ۱: جدول سودوکوی حروف</h2>
+      <p>در ستون‌ها، سطرها و مستطیل‌ها حروف تکراری قرار نگیرد. بعد از اتمام جدول، حروف را از چپ به راست بخوانید.</p>
+      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+      <div class="answer">کاترین</div>
+    </div>
 
-  <div class="slide">
-    <h2>راهنمای ۲: نامه اول</h2>
-    <p>کسی که الکساندرا بهش بی‌توجهی می‌کنه کیه؟ از بازجویی‌ها کمک بگیر.</p>
-    <button class="show-btn">نمایش جواب نهایی</button>
-    <div class="answer">استفان</div>
-  </div>
+    <div class="slide">
+      <h2>راهنمای ۲: نامه اول</h2>
+      <p>کسی که الکساندرا بهش بی‌توجهی می‌کنه کیه؟ از بازجویی‌ها کمک بگیر.</p>
+      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+      <div class="answer">استفان</div>
+    </div>
 
-  <div class="slide">
-    <h2>راهنمای ۳: نامه دوم</h2>
-    <p>کسانی که اسمشان با S شروع می‌شود را شناسایی کن. حدس بزن نامه را کدامشان نوشته.</p>
-    <button class="show-btn">نمایش جواب نهایی</button>
-    <div class="answer">استیو</div>
-  </div>
+    <div class="slide">
+      <h2>راهنمای ۳: نامه دوم</h2>
+      <p>کسانی که اسمشان با S شروع می‌شود را شناسایی کن. حدس بزن نامه را کدامشان نوشته.</p>
+      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+      <div class="answer">استیو</div>
+    </div>
 
-  <div class="slide">
-    <h2>راهنمای ۴: برگه سوخته</h2>
-    <p>دقیق‌تر نگاه کن، رنگ حروف با هم فرق نداره؟ از آن‌ها استفاده کن.</p>
-    <button class="show-btn">نمایش جواب نهایی</button>
-    <div class="answer">اسرار فاش می‌شوند</div>
-  </div>
+    <div class="slide">
+      <h2>راهنمای ۴: برگه سوخته</h2>
+      <p>دقیق‌تر نگاه کن، رنگ حروف با هم فرق نداره؟ از آن‌ها استفاده کن.</p>
+      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+      <div class="answer">اسرار فاش می‌شوند</div>
+    </div>
 
-  <div class="slide">
-    <h2>راهنمای ۵: چک پول</h2>
-    <p>به ضرب‌المثل دقت کن. به چی اشاره می‌کنه؟ یادت نره فارسی ۳۲ حرف داره.</p>
-    <button class="show-btn">نمایش جواب نهایی</button>
-    <div class="answer">رشوه یا کمک</div>
-  </div>
+    <div class="slide">
+      <h2>راهنمای ۵: چک پول</h2>
+      <p>به ضرب‌المثل دقت کن. به چی اشاره می‌کنه؟ یادت نره فارسی ۳۲ حرف داره.</p>
+      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+      <div class="answer">رشوه یا کمک</div>
+    </div>
 
-  <div class="slide">
-    <h2>راهنمای ۶: برگه رمزگذاری شده</h2>
-    <p>با استفاده از برگه راهنما جملات را رمزگشایی کن. متن رمزگشایی‌شده چه حقیقتی را آشکار می‌کند؟</p>
-    <button class="show-btn">نمایش جواب نهایی</button>
-    <div class="answer">[جواب را وارد کن]</div>
+    <div class="slide">
+      <h2>راهنمای ۶: برگه رمزگذاری شده</h2>
+      <p>با استفاده از برگه راهنما جملات را رمزگشایی کن. متن رمزگشایی‌شده چه حقیقتی را آشکار می‌کند؟</p>
+      <button class="show-btn" onclick="toggleAnswer(this)">نمایش جواب نهایی</button>
+      <div class="answer">[جواب را وارد کن]</div>
+    </div>
   </div>
 
   <div class="nav-btns">
@@ -169,15 +187,18 @@
 
   <script>
     const slides = document.querySelectorAll('.slide');
-    const buttons = document.querySelectorAll('.show-btn');
     const pageNumber = document.getElementById('pageNumber');
     let currentSlide = 0;
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
+        slide.classList.remove('active');
       });
-      pageNumber.textContent = `صفحه ${index + 1} از ${slides.length}`;
+
+      setTimeout(() => {
+        slides[index].classList.add('active');
+        pageNumber.textContent = `صفحه ${index + 1} از ${slides.length}`;
+      }, 10);
     }
 
     function nextSlide() {
@@ -193,3 +214,12 @@
         showSlide(currentSlide);
       }
     }
+
+    function toggleAnswer(button) {
+      const answer = button.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
