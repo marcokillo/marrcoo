@@ -1,39 +1,135 @@
-راهنمای 1: جدول سودوکوی حروف
-قوانین سودوکو به شرح زیر است:
-در ستون ها، سطر ها و مستطیل ها حروف تکراری قرار نگیرد.
-بعد از اتمام جدول حروف رو از چپ به راست بخونید.
-جواب نهایی: کاترین
-___
-راهنمای 2: چک پول
-به ضرب المثل دقت کن، به چی اشاره میکنه؟ ما در فارسی 32 تا حروف الفبا داریم.
-جواب نهایی: رشوه یا کمک
-___
-راهنمای 3: گوشی الکساندرا
-به بازجویی ها توجه کن، دارن یک تاریخ خاصی رو نشونت میدن، شاید لازم باشه یکم محاسبه انجام بدی 
-جواب نهایی: 1965 تاریخ تولد استیو
-___
+خواهری, [7/30/2025 6:26 PM]
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>راهنمایی‌ها</title>
+  <style>
+    body {
+      direction: rtl;
+      background-color: #111;
+      color: #eee;
+      font-family: 'Vazir', Tahoma, sans-serif;
+      padding: 20px;
+    }
+    .hint-box {
+      border: 1px solid #444;
+      background-color: #1c1c1c;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .hint-title {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      color: #00d1b2;
+    }
+    .hint-content, .answer {
+      display: none;
+      margin-top: 10px;
+    }
+    .show-btn {
+      margin-top: 10px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #444;
+      color: #fff;
+      cursor: pointer;
+    }
+    .show-btn:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
 
-راهنمای 4: نامه 
-کسانی که اول اسم هاشون S دارن چه اشخاصی هستن؟ حدس میزنید نامه توسط کدوم یکی نوشته شده؟
-جواب نهایی: استیو
-___
+  <h1>راهنمایی‌ها</h1>
 
-راهنمای 5: پازل
-با حروف بهم ریخته باید یک کلمه معنادار بسازی
+  <div class="hint-box">
+    <div class="hint-title" onclick="toggleHint(1)">راهنمایی ۱ - جدول سودوکوی حروف</div>
+    <div class="hint-content" id="hint-1">
+      <p>جدول سودوکوی حروف<br>قوانین سودوکو به شرح زیر است:<br>در ستون ها، سطر ها و مستطیل ها حروف تکراری قرار نگیرد.<br>بعد از اتمام جدول حروف رو از چپ به راست بخونید.</p>
+      <button class="show-btn" onclick="showAnswer(1)">نمایش جواب نهایی</button>
+      <p class="answer" id="answer-1">کاترین</p>
+    </div>
+  </div>
 
-جواب نهایی: نقاب
-____
+  <div class="hint-box">
+    <div class="hint-title" onclick="toggleHint(2)">راهنمایی ۲ - چک پول</div>
+    <div class="hint-content" id="hint-2">
+      <p>چک پول<br>به ضرب المثل دقت کن، به چی اشاره میکنه؟ ما در فارسی 32 تا حروف الفبا داریم.</p>
+      <button class="show-btn" onclick="showAnswer(2)">نمایش جواب نهایی</button>
+      <p class="answer" id="answer-2">رشوه یا کمک</p>
+    </div>
+  </div>
 
+  <div class="hint-box">
+    <div class="hint-title" onclick="toggleHint(3)">راهنمایی ۳ - گوشی الکساندرا</div>
+    <div class="hint-content" id="hint-3">
+      <p>گوشی الکساندرا<br>به بازجویی ها توجه کن، دارن یک تاریخ خاصی رو نشونت میدن، شاید لازم باشه یکم محاسبه انجام بدی</p>
+      <button class="show-btn" onclick="showAnswer(3)">نمایش جواب نهایی</button>
+      <p class="answer" id="answer-3">1965 تاریخ تولد استیو</p>
+    </div>
+  </div>
 
-راهنمای 6: برگه سوخته
-حروف بهم ریخته رو اول هر کلمه جای‌گذاری کن، و بعد به ترتیب حروف رو کنار هم بزار
-جواب نهایی: اسرار فاش میشوند
-____
-راهنمای 7: برگه رمزگذاری شده
-با استفاده از برگه راهنما جملات رو رمزگشایی کن، متن رمزگشایی شده چه حقیقتی رو آشکار میکنه؟
-جواب نهایی:
-همه‌چی ثبت می‌شه
-حتی وقتی هیچ‌کس تماشا نمی‌کنه
-بعضی جواب‌ها توی پرونده نیستن پشت پرده‌ان
-اون‌جاست
-از اول بوده
+  <div class="hint-box">
+    <div class="hint-title" onclick="toggleHint(4)">راهنمایی ۴ - نامه</div>
+    <div class="hint-content" id="hint-4">
+      <p>نامه<br>کسانی که اول اسم هاشون S دارن چه اشخاصی هستن؟ حدس میزنید نامه توسط کدوم یکی نوشته شده؟</p>
+      <button class="show-btn" onclick="showAnswer(4)">نمایش جواب نهایی</button>
+      <p class="answer" id="answer-4">استیو</p>
+    </div>
+  </div>
+
+  <div class="hint-box">
+    <div class="hint-title" onclick="toggleHint(5)">راهنمایی ۵ - پازل</div>
+    <div class="hint-content" id="hint-5">
+      <p>پازل<br>با حروف بهم ریخته باید یک کلمه معنادار بسازی</p>
+      <button class="show-btn" onclick="showAnswer(5)">نمایش جواب نهایی</button>
+      <p class="answer" id="answer-5">نقاب</p>
+    </div>
+  </div>
+
+  <div class="hint-box">
+    <div class="hint-title" onclick="toggleHint(6)">راهنمایی ۶ - برگه سوخته</div>
+    <div class="hint-content" id="hint-6">
+      <p>برگه سوخته<br>حروف بهم ریخته رو اول هر کلمه جای‌گذاری کن، و بعد به ترتیب حروف رو کنار هم بزار</p>
+      <button class="show-btn" onclick="showAnswer(6)">نمایش جواب نهایی</button>
+      <p class="answer" id="answer-6">اسرار فاش میشوند</p>
+    </div>
+  </div>
+
+  <div class="hint-box">
+    <div class="hint-title" onclick="toggleHint(7)">راهنمایی ۷ - برگه رمزگذاری شده</div>
+    <div class="hint-content" id="hint-7">
+      <p>برگه رمزگذاری شده<br>با استفاده از برگه راهنما جملات رو رمزگشایی کن، متن رمزگشایی شده چه حقیقتی رو آشکار میکنه؟</p>
+      <button class="show-btn" onclick="showAnswer(7)">نمایش جواب نهایی</button>
+      <p class="answer" id="answer-7">
+        همه‌چی ثبت می‌شه<br>
+        حتی وقتی هیچ‌کس تماشا نمی‌کنه<br>
+        بعضی جواب‌ها توی پرونده نیستن پشت پرده‌ان<br>
+        اون‌جاست<br>
+        از اول بوده
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function toggleHint(num) {
+      const hint = document.
+
+خواهری, [7/30/2025 6:26 PM]
+getElementById("hint-" + num);
+      hint.style.display = hint.style.display === "none" || hint.style.display === "" ? "block" : "none";
+    }
+
+    function showAnswer(num) {
+      const answer = document.getElementById("answer-" + num);
+      answer.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
