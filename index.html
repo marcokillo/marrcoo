@@ -1,4 +1,4 @@
-خواهری, [7/30/2025 6:26 PM]
+
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -25,9 +25,14 @@
       font-weight: bold;
       color: #00d1b2;
     }
-    .hint-content, .answer {
+    .hint-content {
       display: none;
       margin-top: 10px;
+    }
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #ffd700;
     }
     .show-btn {
       margin-top: 10px;
@@ -48,68 +53,77 @@
   <h1>راهنمایی‌ها</h1>
 
   <div class="hint-box">
-    <div class="hint-title" onclick="toggleHint(1)">راهنمایی ۱ - جدول سودوکوی حروف</div>
+    <div class="hint-title" onclick="toggleHint('hint-1')">راهنمایی ۱ - جدول سودوکوی حروف</div>
     <div class="hint-content" id="hint-1">
-      <p>جدول سودوکوی حروف<br>قوانین سودوکو به شرح زیر است:<br>در ستون ها، سطر ها و مستطیل ها حروف تکراری قرار نگیرد.<br>بعد از اتمام جدول حروف رو از چپ به راست بخونید.</p>
-      <button class="show-btn" onclick="showAnswer(1)">نمایش جواب نهایی</button>
+      <p>قوانین سودوکو به شرح زیر است:<br>
+      در ستون‌ها، سطرها و مستطیل‌ها حروف تکراری قرار نگیرد.<br>
+      بعد از اتمام جدول، حروف را از چپ به راست بخوان.</p>
+      <button class="show-btn" onclick="showAnswer('answer-1')">نمایش جواب نهایی</button>
       <p class="answer" id="answer-1">کاترین</p>
     </div>
   </div>
 
   <div class="hint-box">
-    <div class="hint-title" onclick="toggleHint(2)">راهنمایی ۲ - چک پول</div>
+    <div class="hint-title" onclick="toggleHint('hint-2')">راهنمایی ۲ - چک پول</div>
     <div class="hint-content" id="hint-2">
-      <p>چک پول<br>به ضرب المثل دقت کن، به چی اشاره میکنه؟ ما در فارسی 32 تا حروف الفبا داریم.</p>
-      <button class="show-btn" onclick="showAnswer(2)">نمایش جواب نهایی</button>
+      <p>به ضرب‌المثل دقت کن. به چی اشاره می‌کنه؟<br>
+      ما در فارسی ۳۲ حرف الفبا داریم.</p>
+      <button class="show-btn" onclick="showAnswer('answer-2')">نمایش جواب نهایی</button>
       <p class="answer" id="answer-2">رشوه یا کمک</p>
     </div>
   </div>
 
   <div class="hint-box">
-    <div class="hint-title" onclick="toggleHint(3)">راهنمایی ۳ - گوشی الکساندرا</div>
+    <div class="hint-title" onclick="toggleHint('hint-3')">راهنمایی ۳ - گوشی الکساندرا</div>
     <div class="hint-content" id="hint-3">
-      <p>گوشی الکساندرا<br>به بازجویی ها توجه کن، دارن یک تاریخ خاصی رو نشونت میدن، شاید لازم باشه یکم محاسبه انجام بدی</p>
-      <button class="show-btn" onclick="showAnswer(3)">نمایش جواب نهایی</button>
+      <p>به بازجویی‌ها توجه کن. دارن یک تاریخ خاصی رو نشونت می‌دن.<br>
+      شاید لازم باشه کمی محاسبه انجام بدی.</p>
+      <button class="show-btn" onclick="showAnswer('answer-3')">نمایش جواب نهایی</button>
       <p class="answer" id="answer-3">1965 تاریخ تولد استیو</p>
     </div>
   </div>
 
   <div class="hint-box">
-    <div class="hint-title" onclick="toggleHint(4)">راهنمایی ۴ - نامه</div>
+    <div class="hint-title" onclick="toggleHint('hint-4')">راهنمایی ۴ - نامه</div>
     <div class="hint-content" id="hint-4">
-      <p>نامه<br>کسانی که اول اسم هاشون S دارن چه اشخاصی هستن؟ حدس میزنید نامه توسط کدوم یکی نوشته شده؟</p>
-      <button class="show-btn" onclick="showAnswer(4)">نمایش جواب نهایی</button>
+      <p>کسانی که اول اسم‌شون با S شروع می‌شه چه کسانی هستن؟<br>
+      حدس می‌زنی نامه توسط کدوم‌شون نوشته شده؟</p>
+      <button class="show-btn" onclick="showAnswer('answer-4')">نمایش جواب نهایی</button>
       <p class="answer" id="answer-4">استیو</p>
     </div>
   </div>
 
   <div class="hint-box">
-    <div class="hint-title" onclick="toggleHint(5)">راهنمایی ۵ - پازل</div>
+    <div class="hint-title" onclick="toggleHint('hint-5')">راهنمایی ۵ - پازل</div>
     <div class="hint-content" id="hint-5">
-      <p>پازل<br>با حروف بهم ریخته باید یک کلمه معنادار بسازی</p>
-      <button class="show-btn" onclick="showAnswer(5)">نمایش جواب نهایی</button>
+      <p>با حروف به‌هم‌ریخته باید یک کلمه معنادار بسازی.</p>
+      <button class="show-btn" onclick="showAnswer('answer-5')">نمایش جواب نهایی</button>
       <p class="answer" id="answer-5">نقاب</p>
     </div>
   </div>
 
   <div class="hint-box">
-    <div class="hint-title" onclick="toggleHint(6)">راهنمایی ۶ - برگه سوخته</div>
+    <div class="hint-title" onclick="toggleHint('hint-6')">راهنمایی ۶ - برگه سوخته</div>
     <div class="hint-content" id="hint-6">
-      <p>برگه سوخته<br>حروف بهم ریخته رو اول هر کلمه جای‌گذاری کن، و بعد به ترتیب حروف رو کنار هم بزار</p>
-      <button class="show-btn" onclick="showAnswer(6)">نمایش جواب نهایی</button>
-      <p class="answer" id="answer-6">اسرار فاش میشوند</p>
+      <p>حروف به‌هم‌ریخته رو اول هر کلمه جای‌گذاری کن.<br>
+      بعد به ترتیب، حروف اول رو کنار هم بذار.</p>
+      <button class="show-btn" onclick="showAnswer('answer-6')">نمایش جواب نهایی</button>
+      <p class="answer" id="answer-6">اسرار فاش می‌شوند</p>
     </div>
   </div>
 
   <div class="hint-box">
-    <div class="hint-title" onclick="toggleHint(7)">راهنمایی ۷ - برگه رمزگذاری شده</div>
+    <div class="hint-title" onclick="toggleHint('hint-7')">راهنمایی ۷ - برگه رمزگذاری‌شده</div>
     <div class="hint-content" id="hint-7">
-      <p>برگه رمزگذاری شده<br>با استفاده از برگه راهنما جملات رو رمزگشایی کن، متن رمزگشایی شده چه حقیقتی رو آشکار میکنه؟</p>
-      <button class="show-btn" onclick="showAnswer(7)">نمایش جواب نهایی</button>
+      <p>با استفاده از برگه راهنما، جملات رمزگذاری‌شده رو رمزگشایی کن.<br>
+      متن رمزگشایی‌شده چه حقیقتی رو آشکار می‌کنه؟</p>
+      <button class="show-btn" onclick="showAnswer('answer-7')">نمایش جواب نهایی</button>
       <p class="answer" id="answer-7">
         همه‌چی ثبت می‌شه<br>
         حتی وقتی هیچ‌کس تماشا نمی‌کنه<br>
-        بعضی جواب‌ها توی پرونده نیستن پشت پرده‌ان<br>
+
+خواهری, [7/30/2025 6:32 PM]
+بعضی جواب‌ها توی پرونده نیستن، پشت پرده‌ان<br>
         اون‌جاست<br>
         از اول بوده
       </p>
@@ -117,17 +131,18 @@
   </div>
 
   <script>
-    function toggleHint(num) {
-      const hint = document.
-
-خواهری, [7/30/2025 6:26 PM]
-getElementById("hint-" + num);
-      hint.style.display = hint.style.display === "none" || hint.style.display === "" ? "block" : "none";
+    function toggleHint(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.style.display = (element.style.display === "block") ? "none" : "block";
+      }
     }
 
-    function showAnswer(num) {
-      const answer = document.getElementById("answer-" + num);
-      answer.style.display = "block";
+    function showAnswer(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.style.display = "block";
+      }
     }
   </script>
 
