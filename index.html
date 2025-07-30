@@ -1,144 +1,39 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-<meta charset="UTF-8" />
-<title>معمای گاوصندوق در کتابخانه مرموز</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Vazirmatn', Tahoma, sans-serif;
-    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
-    background-size: cover;
-    color: #eee;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    direction: rtl;
-    user-select: none;
-    overflow: hidden;
-  }
-  #safe-container {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    background: url('https://i.imgur.com/MC1xfwl.png') no-repeat center center;
-    background-size: contain;
-    box-shadow: 0 0 25px #0af;
-    border-radius: 12px;
-    backdrop-filter: brightness(0.8);
-  }
-  #lock-screen {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-  }
-  input[type="password"] {
-    font-size: 22px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    width: 65%;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  button {
-    font-size: 18px;
-    padding: 10px 18px;
-    border-radius: 8px;
-    border: none;
-    background: #0a84ff;
-    color: white;
-    cursor: pointer;
-    width: 45%;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #0073e6;
-  }
-  #error-msg {
-    color: #f66;
-    margin-top: 10px;
-    height: 20px;
-  }
-  #paper {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 200px;
-    background: #f9f5dc;
-    box-shadow: 0 0 15px #bb9e00;
-    border: 3px solid #ccbb44;
-    border-radius: 12px;
-    padding: 20px;
-    cursor: pointer;
-    font-size: 24px;
-    color: #444;
-    text-align: center;
-    line-height: 2;
-    user-select: none;
-  }
-  #paper:hover {
-    box-shadow: 0 0 25px #ffcc00;
-  }
-  #secret-message {
-    margin-top: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #ffcc00;
-    text-align: center;
-    display: none;
-    text-shadow: 0 0 10px #ffcc00;
-  }
-</style>
-</head>
-<body>
+راهنمای 1: جدول سودوکوی حروف
+قوانین سودوکو به شرح زیر است:
+در ستون ها، سطر ها و مستطیل ها حروف تکراری قرار نگیرد.
+بعد از اتمام جدول حروف رو از چپ به راست بخونید.
+جواب نهایی: کاترین
+___
+راهنمای 2: چک پول
+به ضرب المثل دقت کن، به چی اشاره میکنه؟ ما در فارسی 32 تا حروف الفبا داریم.
+جواب نهایی: رشوه یا کمک
+___
+راهنمای 3: گوشی الکساندرا
+به بازجویی ها توجه کن، دارن یک تاریخ خاصی رو نشونت میدن، شاید لازم باشه یکم محاسبه انجام بدی 
+جواب نهایی: 1965 تاریخ تولد استیو
+___
 
-<div id="safe-container">
-  <div id="lock-screen">
-    <input type="password" id="code-input" placeholder="رمز گاوصندوق را وارد کنید" autocomplete="off" />
-    <button onclick="unlockSafe()">باز کن</button>
-    <div id="error-msg"></div>
-  </div>
+راهنمای 4: نامه 
+کسانی که اول اسم هاشون S دارن چه اشخاصی هستن؟ حدس میزنید نامه توسط کدوم یکی نوشته شده؟
+جواب نهایی: استیو
+___
 
-  <div id="paper" onclick="showSecret()">
-    اسرار فاش می‌شوند
-  </div>
-</div>
+راهنمای 5: پازل
+با حروف بهم ریخته باید یک کلمه معنادار بسازی
 
-<div id="secret-message">✨ رمز فاش شد! اسرار دیگر پنهان نیستند! ✨</div>
+جواب نهایی: نقاب
+____
 
-<script>
-  const correctCode = "4521"; // رمز گاوصندوق
 
-  function unlockSafe() {
-    const input = document.getElementById('code-input').value.trim();
-    const errorMsg = document.getElementById('error-msg');
-    if(input === correctCode) {
-      errorMsg.textContent = "";
-      document.getElementById('lock-screen').style.display = "none";
-      document.getElementById('paper').style.display = "block";
-    } else {
-      errorMsg.textContent = "رمز اشتباه است. دوباره تلاش کنید.";
-    }
-  }
-
-  function showSecret() {
-    document.getElementById('secret-message').style.display = "block";
-    document.getElementById('paper').style.cursor = "default";
-    document.getElementById('paper').onclick = null;
-  }
-</script>
-
-</body>
-</html>
+راهنمای 6: برگه سوخته
+حروف بهم ریخته رو اول هر کلمه جای‌گذاری کن، و بعد به ترتیب حروف رو کنار هم بزار
+جواب نهایی: اسرار فاش میشوند
+____
+راهنمای 7: برگه رمزگذاری شده
+با استفاده از برگه راهنما جملات رو رمزگشایی کن، متن رمزگشایی شده چه حقیقتی رو آشکار میکنه؟
+جواب نهایی:
+همه‌چی ثبت می‌شه
+حتی وقتی هیچ‌کس تماشا نمی‌کنه
+بعضی جواب‌ها توی پرونده نیستن پشت پرده‌ان
+اون‌جاست
+از اول بوده
